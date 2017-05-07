@@ -33,6 +33,6 @@ sudo -u postgres psql -d project_data -c 'CREATE EXTENSION if not exists postgis
 
 #add two daily cronjobs to start at 11:09 and 11:11 to download and update quakes database
 crontab -u vagrant -r
-{ crontab -l -u vagrant; echo '11 11 * * * sudo -u vagrant /vagrant/config_files/data_load.sh'; } | crontab -u vagrant -
+{ crontab -l -u vagrant; echo '11 11 * * * sudo -u vagrant /vagrant/schedule/data_load.sh'; } | crontab -u vagrant -
 sudo service cron restart
 sudo reboot

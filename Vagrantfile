@@ -7,6 +7,6 @@ Vagrant.configure(2) do |config|
 	end
 	config.vm.provision "file", source: "config_files/QGIS/QGIS2.conf", destination: "/home/vagrant/.config/QGIS/QGIS2.conf"
 	config.vm.synced_folder "data/", "/vagrant/data/", type: "rsync"
-	config.vm.synced_folder "config_files/", "/vagrant/config_files/", type: "rsync"
+	config.vm.synced_folder "schedule/", "/vagrant/schedule/", type: "rsync"
 	config.vm.provision "shell", path: "provisioning/provision.sh" #here is everything stroed that happens once the mashine is up and running
 end
